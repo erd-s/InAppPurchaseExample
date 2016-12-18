@@ -7,21 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		73121E4648B59961A9B94C67 /* Pods_InAppPurchasesExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2EBD33B4DB89E9486BDD2BD /* Pods_InAppPurchasesExample.framework */; };
+		9B1E2F1A1E0703AB008B0F39 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B1E2F191E0703AB008B0F39 /* StoreKit.framework */; };
 		9B3C685E1E06FDC0001E18E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3C685D1E06FDC0001E18E1 /* AppDelegate.swift */; };
-		9B3C68601E06FDC0001E18E1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3C685F1E06FDC0001E18E1 /* ViewController.swift */; };
 		9B3C68631E06FDC0001E18E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B3C68611E06FDC0001E18E1 /* Main.storyboard */; };
 		9B3C68651E06FDC0001E18E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B3C68641E06FDC0001E18E1 /* Assets.xcassets */; };
 		9B3C68681E06FDC0001E18E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B3C68661E06FDC0001E18E1 /* LaunchScreen.storyboard */; };
+		9B3C68701E06FE43001E18E1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3C686F1E06FE43001E18E1 /* HomeViewController.swift */; };
+		9B3C68721E06FF5B001E18E1 /* PurchaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3C68711E06FF5B001E18E1 /* PurchaseManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		47054CAFC3FCCA2695984DA8 /* Pods-InAppPurchasesExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InAppPurchasesExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InAppPurchasesExample/Pods-InAppPurchasesExample.debug.xcconfig"; sourceTree = "<group>"; };
+		9B1E2F191E0703AB008B0F39 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		9B3C685A1E06FDC0001E18E1 /* InAppPurchasesExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InAppPurchasesExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B3C685D1E06FDC0001E18E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9B3C685F1E06FDC0001E18E1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9B3C68621E06FDC0001E18E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9B3C68641E06FDC0001E18E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9B3C68671E06FDC0001E18E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9B3C68691E06FDC0001E18E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9B3C686F1E06FE43001E18E1 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		9B3C68711E06FF5B001E18E1 /* PurchaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PurchaseManager.swift; sourceTree = "<group>"; };
+		AEE01BF1B90E947D50A14D84 /* Pods-InAppPurchasesExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InAppPurchasesExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-InAppPurchasesExample/Pods-InAppPurchasesExample.release.xcconfig"; sourceTree = "<group>"; };
+		B2EBD33B4DB89E9486BDD2BD /* Pods_InAppPurchasesExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InAppPurchasesExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +37,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73121E4648B59961A9B94C67 /* Pods_InAppPurchasesExample.framework in Frameworks */,
+				9B1E2F1A1E0703AB008B0F39 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0549841F754F2D1A35BBC847 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9B1E2F191E0703AB008B0F39 /* StoreKit.framework */,
+				B2EBD33B4DB89E9486BDD2BD /* Pods_InAppPurchasesExample.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		9B3C68511E06FDBF001E18E1 = {
 			isa = PBXGroup;
 			children = (
 				9B3C685C1E06FDC0001E18E1 /* InAppPurchasesExample */,
 				9B3C685B1E06FDC0001E18E1 /* Products */,
+				C8F295B76E5D6E54B54070F2 /* Pods */,
+				0549841F754F2D1A35BBC847 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,13 +76,23 @@
 			isa = PBXGroup;
 			children = (
 				9B3C685D1E06FDC0001E18E1 /* AppDelegate.swift */,
-				9B3C685F1E06FDC0001E18E1 /* ViewController.swift */,
+				9B3C686F1E06FE43001E18E1 /* HomeViewController.swift */,
 				9B3C68611E06FDC0001E18E1 /* Main.storyboard */,
+				9B3C68711E06FF5B001E18E1 /* PurchaseManager.swift */,
 				9B3C68641E06FDC0001E18E1 /* Assets.xcassets */,
 				9B3C68661E06FDC0001E18E1 /* LaunchScreen.storyboard */,
 				9B3C68691E06FDC0001E18E1 /* Info.plist */,
 			);
 			path = InAppPurchasesExample;
+			sourceTree = "<group>";
+		};
+		C8F295B76E5D6E54B54070F2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				47054CAFC3FCCA2695984DA8 /* Pods-InAppPurchasesExample.debug.xcconfig */,
+				AEE01BF1B90E947D50A14D84 /* Pods-InAppPurchasesExample.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +102,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9B3C686C1E06FDC0001E18E1 /* Build configuration list for PBXNativeTarget "InAppPurchasesExample" */;
 			buildPhases = (
+				6238E2F15AC76EE5428F2FD4 /* [CP] Check Pods Manifest.lock */,
 				9B3C68561E06FDBF001E18E1 /* Sources */,
 				9B3C68571E06FDBF001E18E1 /* Frameworks */,
 				9B3C68581E06FDBF001E18E1 /* Resources */,
+				C07DD1694DFE2075618FCADE /* [CP] Embed Pods Frameworks */,
+				641075FCBBEE779DD9FAF20B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -98,6 +132,11 @@
 						CreatedOnToolsVersion = 8.2;
 						DevelopmentTeam = D95EZ83BDJ;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -132,13 +171,62 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6238E2F15AC76EE5428F2FD4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		641075FCBBEE779DD9FAF20B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-InAppPurchasesExample/Pods-InAppPurchasesExample-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C07DD1694DFE2075618FCADE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-InAppPurchasesExample/Pods-InAppPurchasesExample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		9B3C68561E06FDBF001E18E1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9B3C68601E06FDC0001E18E1 /* ViewController.swift in Sources */,
 				9B3C685E1E06FDC0001E18E1 /* AppDelegate.swift in Sources */,
+				9B3C68721E06FF5B001E18E1 /* PurchaseManager.swift in Sources */,
+				9B3C68701E06FE43001E18E1 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,7 +347,9 @@
 		};
 		9B3C686D1E06FDC0001E18E1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 47054CAFC3FCCA2695984DA8 /* Pods-InAppPurchasesExample.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = D95EZ83BDJ;
 				INFOPLIST_FILE = InAppPurchasesExample/Info.plist;
@@ -272,7 +362,9 @@
 		};
 		9B3C686E1E06FDC0001E18E1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AEE01BF1B90E947D50A14D84 /* Pods-InAppPurchasesExample.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = D95EZ83BDJ;
 				INFOPLIST_FILE = InAppPurchasesExample/Info.plist;
@@ -302,6 +394,7 @@
 				9B3C686E1E06FDC0001E18E1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

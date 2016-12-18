@@ -1,14 +1,19 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D12b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="InAppPurchasesExample" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +21,74 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ERL-sx-PAw">
+                                <rect key="frame" x="66" y="134" width="243" height="30"/>
+                                <color key="backgroundColor" red="0.95897435900000005" green="0.31190656150000001" blue="0.3570821434" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="3Ya-yK-vVg"/>
+                                </constraints>
+                                <color key="tintColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Yearly $19.99"/>
+                                <connections>
+                                    <action selector="yearlyButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="on1-OG-jEp"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Xk-Xc-YXm">
+                                <rect key="frame" x="66" y="253" width="243" height="30"/>
+                                <color key="backgroundColor" red="0.95897435900000005" green="0.31190656150000001" blue="0.3570821434" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="RmI-r7-iXZ"/>
+                                </constraints>
+                                <color key="tintColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Weekly $1.99"/>
+                                <connections>
+                                    <action selector="weeklyButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iuD-8L-opR"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Output" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iUd-8o-5en">
+                                <rect key="frame" x="36" y="383" width="303" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="hUt-1m-5MG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="HR2-41-mxR">
+                                <rect key="frame" x="177" y="323" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="PNi-U1-xyn"/>
+                                    <constraint firstAttribute="width" constant="20" id="Rc6-gs-YZ4"/>
+                                </constraints>
+                                <color key="color" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="7Xk-Xc-YXm" secondAttribute="trailing" constant="50" id="AV7-t5-Nmc"/>
+                            <constraint firstItem="7Xk-Xc-YXm" firstAttribute="top" secondItem="ERL-sx-PAw" secondAttribute="bottom" constant="89" id="Kdo-gm-QKh"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ERL-sx-PAw" secondAttribute="trailing" constant="50" id="Mx7-nB-2kV"/>
+                            <constraint firstItem="7Xk-Xc-YXm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="50" id="OkQ-PE-Rtq"/>
+                            <constraint firstItem="HR2-41-mxR" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Y9r-gG-ATW"/>
+                            <constraint firstItem="iUd-8o-5en" firstAttribute="top" secondItem="7Xk-Xc-YXm" secondAttribute="bottom" constant="100" id="Zkb-DG-3gx"/>
+                            <constraint firstItem="ERL-sx-PAw" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="50" id="ac6-da-ic6"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="iUd-8o-5en" secondAttribute="trailing" constant="20" id="jZG-VN-fIF"/>
+                            <constraint firstItem="ERL-sx-PAw" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="114" id="ntv-XI-vl3"/>
+                            <constraint firstItem="iUd-8o-5en" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="pnM-D2-ueS"/>
+                            <constraint firstItem="HR2-41-mxR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yvj-EO-C3X"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="outputLabel" destination="iUd-8o-5en" id="WUx-Df-Qin"/>
+                        <outlet property="spinner" destination="HR2-41-mxR" id="P7A-IZ-7jp"/>
+                        <outlet property="weeklyButton" destination="7Xk-Xc-YXm" id="HlQ-X4-zGz"/>
+                        <outlet property="yearlyButton" destination="ERL-sx-PAw" id="wf3-O6-rH3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-98.400000000000006" y="122.78860569715144"/>
         </scene>
     </scenes>
 </document>
