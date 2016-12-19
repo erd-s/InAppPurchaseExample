@@ -10,8 +10,17 @@ import Foundation
 import PromiseKit
 import StoreKit
 
-/*-------------------------------------------*/
 //TODO: Check user subscription on startup: https://developer.apple.com/library/content/documentation/NetworkingInternet/Conceptual/StoreKitGuide/Chapters/DeliverProduct.html#//apple_ref/doc/uid/TP40008267-CH5-SW3
+
+
+//----------------------------------------------------------------------------//
+//	1. Call `purchaseManager.subscribe(type)` in View Controller.
+//	2. Purchase Manager requests products of `SubType`.
+//	3. Once products are delivered, requests payment.
+//	4. Once payment has been received, delegate function
+//		`statusUpdated` shows .paymentReceived.
+//  5. View controller gets status updates as you go, then delivers the product.
+//----------------------------------------------------------------------------//
 
 protocol PurchaseManagerDelegate {
 	func statusUpdated(status: PurchaseManager.PurchaseStatus)
@@ -42,12 +51,23 @@ class PurchaseManager: NSObject {
 	}
 	
 	//--------------------------------------
-	//	1. Call `purchaseManager.subscribe(type)` in View Controller.
-	//	2. Purchase Manager requests products of `SubType`.
-	//	3. Once products are delivered, requests payment.
-	//	4. Once payment has been received, delegate function
-	//		`statusUpdated` shows .paymentReceived.
-	//  5. View controller gets status updates as you go, then delivers the product.
+	// MARK: - Support Enums
+	//--------------------------------------
+	enum SubType {
+		case yearly
+		case weekly
+	}
+	
+	enum PurchaseStatus {
+		case productRequested
+		case paymentRequested
+		case paymentSent
+		case paymentReceived
+		case errorPurchasing
+	}
+	
+	//--------------------------------------
+	// MARK: - First Time Purchasing
 	//--------------------------------------
 	/**
 	Catch-all for adding a subscription. One-line call in EnterInformationVC.
@@ -55,7 +75,6 @@ class PurchaseManager: NSObject {
 	func subscribe(type: SubType) {
 		getProducts(sub: type)
 	}
-	
 	
 	/**
 	Get products first.
@@ -97,22 +116,12 @@ class PurchaseManager: NSObject {
 			fulfill()
 		}
 	}
-	
+
 	//--------------------------------------
-	// MARK: - Support Enums
+	// MARK: - Restoring Purchases
 	//--------------------------------------
-	enum SubType {
-		case yearly
-		case weekly
-	}
 	
-	enum PurchaseStatus {
-		case productRequested
-		case paymentRequested
-		case paymentSent
-		case paymentReceived
-		case errorPurchasing
-	}
+	
 }
 
 
@@ -126,7 +135,7 @@ extension PurchaseManager: SKProductsRequestDelegate {
 
 		/* shows invalid product IDs */
 		if response.invalidProductIdentifiers.count > 0 {
-			self.delegate.errorPurchasing(error: NSError(domain: "Purchasing Error", code: 999, userInfo: [NSLocalizedDescriptionKey: "invalid product IDS: \(response.invalidProductIdentifiers)"]))
+			self.delegate.errorPurchasing(error: NSError(domain: "purchasing error", code: 999, userInfo: [NSLocalizedDescriptionKey: "invalid product IDS: \(response.invalidProductIdentifiers)"]))
 		}
 		
 		print("\nreal products:")
@@ -164,8 +173,9 @@ extension PurchaseManager: SKPaymentTransactionObserver {
 				SKPaymentQueue.default().finishTransaction(transaction)
 				self.delegate.statusUpdated(status: .paymentReceived)
 			case .failed:
+				
 				self.delegate.statusUpdated(status: .errorPurchasing)
-				self.delegate.errorPurchasing(error: NSError(domain: "Purchasing Error", code: 998, userInfo: [NSLocalizedDescriptionKey: "Transaction failed."]))
+				self.delegate.errorPurchasing(error: NSError(domain: "purchasing error", code: 998, userInfo: [NSLocalizedDescriptionKey: "transaction failed: \(transaction.error!.localizedDescription)"]))
 				SKPaymentQueue.default().finishTransaction(transaction)
 			case .restored: break
 			case .purchasing:
@@ -175,14 +185,6 @@ extension PurchaseManager: SKPaymentTransactionObserver {
 		}
 	}
 }
-
-
-
-
-
-
-
-
 
 
 

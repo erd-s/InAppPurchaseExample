@@ -23,30 +23,30 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ERL-sx-PAw">
-                                <rect key="frame" x="66" y="134" width="243" height="30"/>
-                                <color key="backgroundColor" red="0.95897435900000005" green="0.31190656150000001" blue="0.3570821434" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="66" y="178" width="243" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="3Ya-yK-vVg"/>
                                 </constraints>
                                 <color key="tintColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Yearly $19.99"/>
+                                <state key="normal" title="Yearly Subscription $19.99"/>
                                 <connections>
                                     <action selector="yearlyButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="on1-OG-jEp"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Xk-Xc-YXm">
                                 <rect key="frame" x="66" y="253" width="243" height="30"/>
-                                <color key="backgroundColor" red="0.95897435900000005" green="0.31190656150000001" blue="0.3570821434" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="RmI-r7-iXZ"/>
                                 </constraints>
                                 <color key="tintColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Weekly $1.99"/>
+                                <state key="normal" title="Weekly Subscription $1.99"/>
                                 <connections>
                                     <action selector="weeklyButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iuD-8L-opR"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Output" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iUd-8o-5en">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iUd-8o-5en">
                                 <rect key="frame" x="36" y="383" width="303" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="hUt-1m-5MG"/>
@@ -64,17 +64,17 @@
                                 <color key="color" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="HR2-41-mxR" firstAttribute="top" secondItem="7Xk-Xc-YXm" secondAttribute="bottom" constant="40" id="5Lb-d9-B0R"/>
                             <constraint firstAttribute="trailingMargin" secondItem="7Xk-Xc-YXm" secondAttribute="trailing" constant="50" id="AV7-t5-Nmc"/>
-                            <constraint firstItem="7Xk-Xc-YXm" firstAttribute="top" secondItem="ERL-sx-PAw" secondAttribute="bottom" constant="89" id="Kdo-gm-QKh"/>
+                            <constraint firstItem="7Xk-Xc-YXm" firstAttribute="top" secondItem="ERL-sx-PAw" secondAttribute="bottom" constant="45" id="Kdo-gm-QKh"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ERL-sx-PAw" secondAttribute="trailing" constant="50" id="Mx7-nB-2kV"/>
                             <constraint firstItem="7Xk-Xc-YXm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="50" id="OkQ-PE-Rtq"/>
                             <constraint firstItem="HR2-41-mxR" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Y9r-gG-ATW"/>
-                            <constraint firstItem="iUd-8o-5en" firstAttribute="top" secondItem="7Xk-Xc-YXm" secondAttribute="bottom" constant="100" id="Zkb-DG-3gx"/>
                             <constraint firstItem="ERL-sx-PAw" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="50" id="ac6-da-ic6"/>
+                            <constraint firstItem="iUd-8o-5en" firstAttribute="top" secondItem="HR2-41-mxR" secondAttribute="bottom" constant="40" id="cEI-Sx-1UX"/>
                             <constraint firstAttribute="trailingMargin" secondItem="iUd-8o-5en" secondAttribute="trailing" constant="20" id="jZG-VN-fIF"/>
-                            <constraint firstItem="ERL-sx-PAw" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="114" id="ntv-XI-vl3"/>
                             <constraint firstItem="iUd-8o-5en" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="pnM-D2-ueS"/>
                             <constraint firstItem="HR2-41-mxR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yvj-EO-C3X"/>
                         </constraints>
