@@ -60,6 +60,8 @@ extension HomeViewController: PurchaseManagerDelegate {
 		case .paymentQueued: outputText = "payment queued"
 		case .paymentReceived:
 			outputText = "payment received"
+		case .productDelivered:
+			outputText = "product delivered"
 			spinner.stopAnimating()
 		case .errorPurchasing: outputText = "error purchasing"
 		}
@@ -69,6 +71,7 @@ extension HomeViewController: PurchaseManagerDelegate {
 	}
 	
 	func errorPurchasing(error: Error) {
+		spinner.stopAnimating()
 		outputLabel.text = outputLabel.text?.appending("\n\(error.localizedDescription)")
 	}
 }

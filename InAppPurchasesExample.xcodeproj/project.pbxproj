@@ -354,7 +354,7 @@
 				DEVELOPMENT_TEAM = D95EZ83BDJ;
 				INFOPLIST_FILE = InAppPurchasesExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Mouth.InAppPurchasesExample;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Mouth.InAppPurchasesExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -369,7 +369,7 @@
 				DEVELOPMENT_TEAM = D95EZ83BDJ;
 				INFOPLIST_FILE = InAppPurchasesExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Mouth.InAppPurchasesExample;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Mouth.InAppPurchasesExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
