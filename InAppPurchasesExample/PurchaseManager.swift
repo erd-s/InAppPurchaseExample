@@ -26,7 +26,6 @@ class PurchaseManager: NSObject {
 	// MARK: - Properties
 	//--------------------------------------
 	/* you can add product ID's here or directly in the `getProducts` function */
-	fileprivate var productIDS: Set = ["<PRODUCT_ID_HERE>", "1wk"]
 	var productRequest: SKProductsRequest!
 	var products: [SKProduct]!
 	var payment: SKMutablePayment!
@@ -54,7 +53,6 @@ class PurchaseManager: NSObject {
 	Catch-all for adding a subscription. One-line call in EnterInformationVC.
 	*/
 	func subscribe(type: SubType) {
-		delegate.statusUpdated(status: .requestProduct)
 		getProducts(sub: type)
 	}
 	
@@ -65,11 +63,14 @@ class PurchaseManager: NSObject {
 	- parameter sub: `SubType` includes `.yearly` & `.weekly`.
 	*/
 	func getProducts(sub: SubType) {
-		if sub == SubType.yearly {
-			productRequest = SKProductsRequest(productIdentifiers: productIDS)
-		} else {
-			productRequest = SKProductsRequest(productIdentifiers: productIDS)
-		}
+		delegate.statusUpdated(status: .productRequested)
+		
+		let yr: Set = ["1yr"]
+		let wk: Set = ["1wk"]
+		let yrReq = SKProductsRequest(productIdentifiers: yr)
+		let wkReq = SKProductsRequest(productIdentifiers: wk)
+		
+		productRequest = sub == .yearly ? yrReq : wkReq
 		productRequest.delegate = self
 		productRequest.start()
 		
@@ -106,8 +107,7 @@ class PurchaseManager: NSObject {
 	}
 	
 	enum PurchaseStatus {
-		case requestProduct
-		case requestPayment
+		case productRequested
 		case paymentRequested
 		case paymentSent
 		case paymentReceived
@@ -134,7 +134,8 @@ extension PurchaseManager: SKProductsRequestDelegate {
 		
 		/* first product will get delivered. use when user is purchasing only 1 product */
 		if let productRequested = products.first {
-			delegate.statusUpdated(status: .requestPayment)
+			delegate.statusUpdated(status: .paymentRequested)
+			
 			requestPayment(product: productRequested).then {
 				/* payment has been requested */
 				self.delegate.statusUpdated(status: .paymentRequested)

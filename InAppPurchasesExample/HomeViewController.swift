@@ -55,14 +55,13 @@ extension HomeViewController: PurchaseManagerDelegate {
 		var outputText: String!
 		
 		switch status {
-		case .requestProduct: outputText = "requesting product"
-		case .requestPayment: outputText = "requesting payment"
-		case .paymentQueued: outputText = "payment queued"
+		case .productRequested: outputText = "requesting product from apple"
+		case .paymentRequested: outputText = "requesting payment from user"
+		case .paymentSent: outputText = "payment sent by user"
 		case .paymentReceived:
-			outputText = "payment received"
-		case .productDelivered:
-			outputText = "product delivered"
+			outputText = "payment received by apple"
 			spinner.stopAnimating()
+			/* deliver product here */
 		case .errorPurchasing: outputText = "error purchasing"
 		}
 		
